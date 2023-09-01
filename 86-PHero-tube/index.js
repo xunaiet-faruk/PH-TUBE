@@ -9,7 +9,7 @@ const loadMap = async () => {
     phones.forEach((phone) => {
         const createElements = document.createElement('container');
         createElements.innerHTML = `
-           <button onclick ="containerCard('${phone.category_id}')" class="btn hover:bg-[#FF1F3D] bg-gray-200">${phone.category}</button>
+           <button onclick ="containerCard('${phone.category_id}')" class="btn hover:bg-[#FF1F3D] bg-gray-200 text-xs lg:text-xl">${phone.category}</button>
            `
         containers.appendChild(createElements);
     })
@@ -43,11 +43,11 @@ const containerCard = async (id) => {
         let miniteresult = allTimer % 60;
         const createcard = document.createElement('div');
         createcard.innerHTML = `
-       <div class="card card-compact w-72 bg-base-100 relative">
+       <div class="card card-compact h-[336px] bg-base-100 relative">
        
     <figure><img class="h-[200px] rounded-md" src="${carddata.thumbnail}" alt="Shoes" /></figure>
     <div class="items-center mt-6 gap-4 flex justify-start">
-      <P class=" absolute -mt-32 ml-44 bg-[#171717] text-[#FFF]" id="convert"> ${hoursFloat ? hoursFloat : ''}<span>${hoursFloat ? 'hrs' : ''}</span>${miniteresult ? miniteresult : ''}
+      <P class=" absolute -mt-32 ml-36 bg-[#171717] text-[#FFF]" id="convert"> ${hoursFloat ? hoursFloat : ''}<span>${hoursFloat ? 'hrs' : ''}</span>${miniteresult ? miniteresult : ''}
       <span>${miniteresult ? 'min ago' : ''}</span></P>
         <img class="w-10 h-10 rounded-3xl" src="${image}">
         <p class="font-bold"> ${carddata.title}</p>

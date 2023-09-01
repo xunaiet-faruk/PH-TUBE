@@ -9,38 +9,35 @@
 
 </head>
 <body class="bg-[#FFF]">
-<nav class="max-w-screen-2xl mx-auto p-5">
-<div class="navabar" id="navbar">
 
+<header class="max-w-screen-2xl mx-auto mt-12">
 
-<div class="navbar bg-base-100">
-    <div class="navbar-start">
-        <div class="dropdown mt-5">
-      
-            <img src="Logo.png" alt="">
-         
-      
-        </div>
-    </div>
-    <div class="navbar-center" id="error">
-   <button class="text-black bg-gray-300 px-3 py-2 mt-5 rounded-sm font-semibold">Sort by view</button>
-    </div>
-    <div class="navbar-end mr-10">
-  <button id="btnquestion" class="text-white font-semibold px-4 py-2 mt-5 bg-[#FF1F3D] rounded-sm">Blog</button>
-    </div>
-</div>
- 
+<section class="px-[20px] sm:px-[80px] lg:[80px]">
+
+<div class="flex justify-between">
+<div>
+    <img src="Logo.png" alt="">
+
 </div>
 
-<hr>
-</nav>
+<div>
+    <button class="btn btn-active btn-ghost text-xs sm:text-base lg:text-base text-black hover:bg-[#ff1f3d]hover:text-white sm:px-[24px] lg:px-[24px] py-3">Sort by view</button>
+</div>
+
+<div>
+    <button  class="btn btn-active text-xs sm:text-base lg:text-base text-black hover:bg-[#ff1f3d]hover:text-white sm:px-[24px] lg:px-[24px] py-3 bg-[#ff1f3d]" id="btnquestion">Blog</button>
+</div>
+</div>
 
 
-<header>
+</section>
 
-    <div class="containers text-center px-3 mt-10" id="container">
+<hr class="my-12 mx-[20px] sm:mx-[80px] lg:mx-[80px]">
 
-     
+  <div class="flex justify-center lg:gap-[24px] gap-[16px]" id="container">
+
+    
+
     </div>
 
 
@@ -49,13 +46,13 @@
 
 <main class="max-w-screen-2xl mx-auto">
 
-<div class="containers grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1  gap-6 mt-10 p-5" id="card-container">
+<div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6 mt-10 px-[80px] h-52" id="card-container">
 
 
 </div>
 
 
-<div id ="last" class="hidden">
+<div id ="last" class="hidden -mt-[80px]">
 <div class="flex justify-center">
         <img src="Icon.png" class="w-[150px]">
 </div>
