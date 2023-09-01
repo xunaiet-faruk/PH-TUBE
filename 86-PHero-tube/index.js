@@ -56,6 +56,12 @@ const containerCard = async (id) => {
     })
 }
 
+document.getElementById('btnquestion').addEventListener('click', function(){
+
+window.location.href='question.html'
+
+})
+
 
 loadMap();
 
