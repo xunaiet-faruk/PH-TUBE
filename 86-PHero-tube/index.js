@@ -1,16 +1,14 @@
 const loadMap = async () => {
-    const res = await fetch('https://openapi.programming-hero.com/api/videos/categories')
+    const res = await fetch('https://openapi.programming-hero.com/api/videos/categories');
     const data = await res.json();
-    const phones = data.data
-    console.log(phones);
-
+    const phones = data.data;
+    // console.log(phones);
     const containers = document.getElementById('container');
-
     phones.forEach((phone) => {
         const createElements = document.createElement('container');
         createElements.innerHTML = `
            <button onclick ="containerCard('${phone.category_id}')" class="btn hover:bg-[#FF1F3D] bg-gray-200 text-xs lg:text-xl">${phone.category}</button>
-           `
+           `;
         containers.appendChild(createElements);
     })
 }
@@ -18,35 +16,35 @@ const containerCard = async (id) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
     const data = await res.json();
     const datainfo = data.data;
-    const cardall = document.getElementById('card-container')
-    const lastbtn = document.getElementById('last')
+    const cardall = document.getElementById('card-container');
+    const lastbtn = document.getElementById('last');
     cardall.textContent = '';
     if (datainfo.length == 0) {
-        lastbtn.classList.remove("hidden")
-        const creatediv = document.createElement('div')
+        lastbtn.classList.remove("hidden");
+        const creatediv = document.createElement('div');
         creatediv.innerHTML = `
         <div class="flex justify-center">
         <img src="Icon.png" class="w-[150px]">
         </div>
         <h1 class="text-5xl font-bold text-center"> Oops!! Sorry, There is no <br> content here</h1>
-        `
-        lastbtn.appendChild(creatediv)
+        `;
+        lastbtn.appendChild(creatediv);
 
     } else {
-        lastbtn.classList.add('hidden')
+        lastbtn.classList.add('hidden');
     }
     datainfo.forEach((carddata) => {
 
         // console.log(cardall)
         const imageShort = carddata?.authors[0];
         const image = imageShort?.profile_picture;
-        const image_name = imageShort?.profile_name
+        const image_name = imageShort?.profile_name;
         console.log(image_name)
-        const allTimer = carddata?.others?.posted_date
+        const allTimer = carddata?.others?.posted_date;
         let hours = Math.floor(allTimer / 60);
         let minites = hours / 60;
         let minite = parseInt(minites);
-        let hoursFloat = parseFloat(minite)
+        let hoursFloat = parseFloat(minite);
         let miniteresult = allTimer % 60;
         const createcard = document.createElement('div');
         createcard.innerHTML = `
@@ -64,22 +62,18 @@ const containerCard = async (id) => {
                 '<img src="img.svg" alt="" id="logo">' : ''}
       </div>
             <p class="text-gray ml-14"> ${carddata.others?.views} views</p>
-       </div>`
-        cardall.appendChild(createcard)
+       </div>`;
+        cardall.appendChild(createcard);
 
     })
 }
-
 document.getElementById('btnquestion').addEventListener('click', function () {
 
-    window.location.href = 'question.html'
+    window.location.href = 'question.html';
 
 })
 
 
-
-
-
 loadMap();
 
-containerCard('1000')
+containerCard('1000');
