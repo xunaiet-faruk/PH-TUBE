@@ -78,6 +78,8 @@ document.getElementById('btnquestion').addEventListener('click', function () {
 
 
 
+
+
 loadMap();
 
 containerCard('1000')

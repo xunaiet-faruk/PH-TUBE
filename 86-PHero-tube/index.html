@@ -65,25 +65,3 @@
     
 </body>
 </html>
-<!-- 
-
-let viewsCounter = (value) => {
-let numberValue = value.split('K')[0];
-let thousand = parseInt(numberValue.split('.')[0]) * 1000 ;
-let hundred = parseInt(numberValue.split('.')[1] ) * 100;
-if( !hundred ){
-hundred = 0;
-}
-let totalViews = thousand + hundred;
-return totalViews
-}
-if( isSorting ){
-let sorting = videos.sort((a,b) => {
-let first = viewsCounter(a.others.views)
-let second = viewsCounter(b.others.views)
-
-if( first > second ) return 1;
-else return -1;
-})
-videos = sorting.reverse();
-} -->
