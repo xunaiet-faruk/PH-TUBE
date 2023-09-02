@@ -52,7 +52,7 @@ const containerCard = async (id) => {
        
     <figure><img class="h-[200px] rounded-md" src="${carddata.thumbnail}" alt="Shoes" /></figure>
     <div class="items-center mt-6 gap-4 flex justify-start">
-      <P class=" absolute -mt-32 ml-36 bg-[#171717] text-[#FFF]" id="convert"> ${hoursFloat ? hoursFloat : ''}<span>${hoursFloat ? 'hrs' : ''}</span>${miniteresult ? miniteresult : ''}
+      <P class=" absolute -mt-32 ml-32 bg-[#171717] text-[#FFF]" id="convert"> ${hoursFloat ? hoursFloat : ''}<span>${hoursFloat ? 'hrs' : ''}</span>${miniteresult ? miniteresult : ''}
       <span>${miniteresult ? 'min ago' : ''}</span></P>
         <img class="w-10 h-10 rounded-3xl" src="${image}">
         <p class="font-bold"> ${carddata.title}</p>
