@@ -17,9 +17,10 @@ const containerCard = async (id) => {
     const data = await res.json();
     const datainfo = data.data;
     const cardall = document.getElementById('card-container');
-    const lastbtn = document.getElementById('last');
     cardall.textContent = '';
     if (datainfo.length == 0) {
+        const lastbtn = document.getElementById('last');
+        lastbtn.textContent ='';
         lastbtn.classList.remove("hidden");
         const creatediv = document.createElement('div');
         creatediv.innerHTML = `
@@ -30,7 +31,8 @@ const containerCard = async (id) => {
         `;
         lastbtn.appendChild(creatediv);
 
-    } else {
+    }else{
+        const lastbtn = document.getElementById('last');
         lastbtn.classList.add('hidden');
     }
     datainfo.forEach((carddata) => {
