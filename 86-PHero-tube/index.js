@@ -18,19 +18,26 @@ const containerCard = async (id) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
     const data = await res.json();
     const datainfo = data.data;
-    const lastbtn = document.getElementById('last')
     const cardall = document.getElementById('card-container')
+    const lastbtn = document.getElementById('last')
     cardall.textContent = '';
     if (datainfo.length == 0) {
-
         lastbtn.classList.remove("hidden")
+        const creatediv = document.createElement('div')
+        creatediv.innerHTML = `
+        <div class="flex justify-center">
+        <img src="Icon.png" class="w-[150px]">
+        </div>
+        <h1 class="text-5xl font-bold text-center"> Oops!! Sorry, There is no <br> content here</h1>
+        `
+        lastbtn.appendChild(creatediv)
+
     } else {
         lastbtn.classList.add('hidden')
     }
     datainfo.forEach((carddata) => {
 
         // console.log(cardall)
-
         const imageShort = carddata?.authors[0];
         const image = imageShort?.profile_picture;
         const image_name = imageShort?.profile_name
@@ -68,6 +75,7 @@ document.getElementById('btnquestion').addEventListener('click', function () {
     window.location.href = 'question.html'
 
 })
+
 
 
 loadMap();

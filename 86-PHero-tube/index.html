@@ -53,10 +53,10 @@
 
 
 <div id ="last" class="hidden -mt-[80px]">
-<div class="flex justify-center">
+<!-- <div class="flex justify-center">
         <img src="Icon.png" class="w-[150px]">
 </div>
-    <h1 class="text-5xl font-bold text-center"> Oops!! Sorry, There is no <br> content here</h1>
+    <h1 class="text-5xl font-bold text-center"> Oops!! Sorry, There is no <br> content here</h1> -->
 </div>
 
 </main>
@@ -65,3 +65,25 @@
     
 </body>
 </html>
+<!-- 
+
+let viewsCounter = (value) => {
+let numberValue = value.split('K')[0];
+let thousand = parseInt(numberValue.split('.')[0]) * 1000 ;
+let hundred = parseInt(numberValue.split('.')[1] ) * 100;
+if( !hundred ){
+hundred = 0;
+}
+let totalViews = thousand + hundred;
+return totalViews
+}
+if( isSorting ){
+let sorting = videos.sort((a,b) => {
+let first = viewsCounter(a.others.views)
+let second = viewsCounter(b.others.views)
+
+if( first > second ) return 1;
+else return -1;
+})
+videos = sorting.reverse();
+} -->
